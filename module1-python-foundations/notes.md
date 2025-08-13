@@ -313,3 +313,28 @@ print(x & y)      # Bitwise AND
 print("a" in "apple")  # Membership → 'a' is in "apple" → True
 
 ```
+## 8️⃣ Python Lists
+
+In Python, **lists** are ordered, mutable (changeable) collections of items. They can store elements of any data type, and the same list can contain items of different types.
+
+### Creating a List
+
+```python
+# Empty list
+my_list = []
+
+# List with elements
+fruits = ["apple", "banana", "cherry"]
+
+# List with mixed data types
+mixed_list = [1, "hello", 3.5, True]
+```
+### Accessing List Items
+Lists are indexed (starting from 0).
+You can use positive or negative indexing.
+
+```python
+fruits = ["apple", "banana", "cherry"]
+print(fruits[0])   # apple
+print(fruits[-1])  # cherry
+```
