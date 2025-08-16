@@ -317,6 +317,10 @@ print("a" in "apple")  # Membership → 'a' is in "apple" → True
 
 In Python, **lists** are ordered, mutable (changeable) collections of items. They can store elements of any data type, and the same list can contain items of different types.
 
+### type()
+From Python's perspective, lists are defined as objects with the data type 'list':
+**<class 'list'>**
+
 ### Creating a List
 
 ```python
@@ -338,3 +342,194 @@ fruits = ["apple", "banana", "cherry"]
 print(fruits[0])   # apple
 print(fruits[-1])  # cherry
 ```
+### Slicing Lists
+```python
+fruits = ["apple", "banana", "cherry", "orange", "mango"]
+
+print(fruits[1:3])  # ['banana', 'cherry']
+print(fruits[:2])   # ['apple', 'banana']
+print(fruits[2:])   # ['cherry', 'orange', 'mango']
+```
+
+### Changing List Items
+```python
+fruits = ["apple", "banana", "cherry"]
+fruits[1] = "blueberry"
+print(fruits)  # ['apple', 'blueberry', 'cherry']
+```
+
+### Adding Items to a List
+```python
+fruits = ["apple", "banana"]
+
+fruits.append("cherry")       # Add at the end
+fruits.insert(1, "orange")    # Insert at index 1
+
+print(fruits)  # ['apple', 'orange', 'banana', 'cherry']
+```
+
+### Removing Items from a List
+
+```python
+fruits = ["apple", "banana", "cherry"]
+
+fruits.remove("banana")  # Removes 'banana'
+fruits.pop()             # Removes last item
+del fruits[0]            # Deletes item at index 0
+
+print(fruits)  # ['cherry']
+```
+
+### List Functions and Methods
+```python
+numbers = [5, 2, 9, 1]
+
+print(len(numbers))  # 4
+print(max(numbers))  # 9
+print(min(numbers))  # 1
+
+numbers.sort()       # Sort in ascending order
+numbers.reverse()    # Reverse the list
+numbers.clear()      # Clear all items
+```
+### Looping Through a List
+```python
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+```
+### List Comprehensions
+
+A concise way to create lists.
+
+```python
+numbers = [x for x in range(5)]
+print(numbers)  # [0, 1, 2, 3, 4]
+
+squares = [x**2 for x in range(5)]
+print(squares)  # [0, 1, 4, 9, 16]
+
+```
+
+### Nested Lists
+
+Lists can contain other lists.
+```python
+matrix = [[1, 2], [3, 4], [5, 6]]
+print(matrix[1][0])  # 3
+```
+
+
+### Summary
+
+- Lists are ordered, mutable, and can store different data types.
+
+- Indexing starts at 0.
+
+- Common operations: append, insert, remove, pop, sort, reverse.
+
+- Supports slicing, nesting, and list comprehensions.
+
+### 9️⃣ Python Tuples
+
+A **tuple** in Python is an ordered, immutable collection of items.  Unlike lists, tuples **cannot be modified** (no adding, removing, or changing elements once created).  
+They are useful when you want to store a collection of values that should remain constant.
+
+
+### Creating Tuples
+
+```python
+# Empty tuple
+t1 = ()
+
+# Tuple with integers
+t2 = (1, 2, 3)
+
+# Tuple with mixed data types
+t3 = (1, "hello", 3.5)
+
+# Tuple without parentheses (packing)
+t4 = 1, 2, 3
+
+# Nested tuple
+t5 = (1, (2, 3), (4, 5))
+
+# Tuple with one element (note the comma)
+t6 = (5,)
+```
+### Accessing Tuple Elements
+```python 
+t = (10, 20, 30, 40, 50)
+
+print(t[0])   # First element → 10
+print(t[-1])  # Last element → 50
+print(t[1:4]) # Slicing → (20, 30, 40)
+```
+
+### Tuple Operations
+```python
+t1 = (1, 2, 3)
+t2 = (4, 5, 6)
+
+# Concatenation
+print(t1 + t2)  # (1, 2, 3, 4, 5, 6)
+
+# Repetition
+print(t1 * 2)   # (1, 2, 3, 1, 2, 3)
+
+# Membership
+print(2 in t1)   # True
+print(10 not in t1) # True
+
+# Length
+print(len(t1))   # 3
+```
+
+### Tuple Methods
+
+Tuples have only two built-in methods:
+
+```python
+t = (1, 2, 2, 3, 4)
+
+print(t.count(2))   # 2 (counts occurrences of 2)
+print(t.index(3))   # 3 (returns first index of value 3)
+
+# Tuple Unpacking : in Python, we are also allowed to extract the values back into variables. This is called "unpacking":
+t = (100, 200, 300)
+
+# Unpacking
+a, b, c = t
+print(a, b, c)  # 100 200 300
+
+# Extended unpacking
+t2 = (1, 2, 3, 4, 5)
+x, *y, z = t2 # If the number of variables is less than the number of values, you can add an * to the variable name and the values will be assigned to the variable as a list:
+print(x)  # 1
+print(y)  # [2, 3, 4]
+print(z)  # 5
+```
+
+### Immutability of Tuples
+
+Tuples cannot be changed after creation:
+```python 
+t = (1, 2, 3)
+# t[0] = 100   # ❌ Error: 'tuple' object does not support item assignment
+
+
+However, if a tuple contains mutable elements (like lists), those can be modified:
+
+t = (1, [2, 3], 4)
+t[1][0] = 99
+print(t)   # (1, [99, 3], 4)
+```
+
+### Why Use Tuples?
+
+- Immutability → safer for constant data.
+
+- Performance → faster than lists in certain operations.
+
+- Hashable → can be used as dictionary keys and set elements (if they contain only immutable data).
