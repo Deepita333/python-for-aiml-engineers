@@ -431,7 +431,7 @@ print(matrix[1][0])  # 3
 
 - Supports slicing, nesting, and list comprehensions.
 
-### 9️⃣ Python Tuples
+## 9️⃣ Python Tuples
 
 A **tuple** in Python is an ordered, immutable collection of items.  Unlike lists, tuples **cannot be modified** (no adding, removing, or changing elements once created).  
 They are useful when you want to store a collection of values that should remain constant.
@@ -533,3 +533,114 @@ print(t)   # (1, [99, 3], 4)
 - Performance → faster than lists in certain operations.
 
 - Hashable → can be used as dictionary keys and set elements (if they contain only immutable data).
+
+Python Sets
+
+In Python, a **set** is an unordered collection of unique and immutable elements.  
+It is commonly used when you want to store multiple items without duplicates.
+
+---
+
+## 🔟 Python Sets
+```python
+# Using curly braces
+fruits = {"apple", "banana", "cherry"}
+
+# Using set() constructor
+numbers = set([1, 2, 3, 4, 4, 5])  # Duplicates removed
+print(numbers)  # {1, 2, 3, 4, 5}
+```
+⚠️ Note: Empty curly braces {} create a dictionary, not a set.
+To create an empty set, use set().
+
+### Set Properties
+- Unordered: No defined order (cannot be indexed like lists).
+
+- unique: No duplicate elements.
+
+- Mutable: You can add or remove items, but elements must be immutable (e.g., you cannot have lists inside sets).
+
+### Accessing Elements
+Sets are unordered, so you cannot access elements by index.
+You can loop through a set instead:
+
+```python
+fruits = {"apple", "banana", "cherry"}
+for fruit in fruits:
+    print(fruit)
+```
+### Adding Elements
+``` python
+fruits = {"apple", "banana"}
+fruits.add("cherry")
+print(fruits)  # {"apple", "banana", "cherry"}
+
+# Add multiple items
+fruits.update(["orange", "mango"])
+print(fruits)  # {"apple", "banana", "cherry", "orange", "mango"}
+```
+### Removing Elements
+``` python
+fruits = {"apple", "banana", "cherry"}
+fruits.remove("banana")   # Raises error if not found
+print(fruits)
+
+fruits.discard("apple")   # No error if not found
+print(fruits)
+
+fruits.pop()  # Removes a random element
+print(fruits)
+
+fruits.clear()  # Empty the set
+print(fruits)   # set()
+```
+
+### Set Operations
+Sets support mathematical operations like union, intersection, and difference.
+
+``` python
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+# Union (all elements)
+print(A | B)        # {1, 2, 3, 4, 5, 6}
+print(A.union(B))   # {1, 2, 3, 4, 5, 6}
+
+# Intersection (common elements)
+print(A & B)        # {3, 4}
+print(A.intersection(B))  # {3, 4}
+
+# Difference (in A but not in B)
+print(A - B)        # {1, 2}
+print(A.difference(B))  # {1, 2}
+
+# Symmetric Difference (elements in either set, not both)
+print(A ^ B)        # {1, 2, 5, 6}
+print(A.symmetric_difference(B))  # {1, 2, 5, 6}
+```
+
+### Set Membership
+
+```python
+A = {1, 2, 3}
+print(2 in A)   # True
+print(5 not in A) # True
+```
+### Frozen Sets
+A frozenset is an immutable version of a set (cannot be modified after creation).
+
+```python
+
+frozen = frozenset([1, 2, 3, 2])
+print(frozen)  # frozenset({1, 2, 3})
+
+# You cannot add or remove elements from a frozenset
+```
+### Summary
+- Set = mutable, unordered, unique elements.
+
+- Frozen Set = immutable version of set.
+
+- Useful for mathematical set operations and removing duplicates.
+
+
