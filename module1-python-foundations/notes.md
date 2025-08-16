@@ -519,7 +519,7 @@ t = (1, 2, 3)
 # t[0] = 100   # ❌ Error: 'tuple' object does not support item assignment
 
 
-However, if a tuple contains mutable elements (like lists), those can be modified:
+# However, if a tuple contains mutable elements (like lists), those can be modified:
 
 t = (1, [2, 3], 4)
 t[1][0] = 99
