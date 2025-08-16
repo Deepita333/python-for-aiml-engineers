@@ -467,7 +467,7 @@ print(t[-1])  # Last element → 50
 print(t[1:4]) # Slicing → (20, 30, 40)
 ```
 
-### Tuple Operations
+### Tuple Operations 
 ```python
 t1 = (1, 2, 3)
 t2 = (4, 5, 6)
