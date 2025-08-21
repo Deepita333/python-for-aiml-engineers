@@ -643,4 +643,22 @@ print(frozen)  # frozenset({1, 2, 3})
 
 - Useful for mathematical set operations and removing duplicates.
 
+## 1️⃣1️⃣ Python Dictionaries
 
+In Python, a **dictionary** is a collection of key-value pairs.  
+It is written with curly brackets `{}`, and each key is separated from its value by a colon `:`.  
+
+
+### Creating a Dictionary
+
+```python
+# Example of a dictionary
+my_dict = {
+    "name": "Alice",
+    "age": 25,
+    "city": "New York"
+}
+
+print(my_dict)
+
+```
