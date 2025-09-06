@@ -56,7 +56,7 @@ print("Blastoff!")
 ## Loop Control Statements
 You can change the flow of a loop using control statements. The two most common are break and continue.
 
-### break
+### `break`
 The break statement is used to exit a loop completely, regardless of the loop's condition.
 
 Example
@@ -70,7 +70,7 @@ print("Loop finished.")
 ```
 This code will print numbers from 0 to 4 and then stop.
 
-### continue
+### `continue`
 The continue statement is used to skip the rest of the code inside the current iteration and move to the next one.
 
 Example
